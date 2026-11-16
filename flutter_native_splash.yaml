@@ -1,0 +1,9 @@
+# Launch screen shown while Flutter starts. Run: dart run flutter_native_splash:create
+flutter_native_splash:
+  color: "#3D1440"
+  image: assets/brand/splash_small.png
+  # Android 12+ draws its own splash: the logo must sit inside a circle.
+  android_12:
+    color: "#3D1440"
+    image: assets/brand/splash_logo.png
+  web: true
