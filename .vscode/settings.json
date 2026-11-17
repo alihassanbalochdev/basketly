@@ -1,4 +1,7 @@
 {
     "java.compile.nullAnalysis.mode": "automatic",
-    "deno.enablePaths": ["supabase/functions"]
+    "deno.enablePaths": [
+        "supabase/functions"
+    ],
+    "java.configuration.updateBuildConfiguration": "interactive"
 }

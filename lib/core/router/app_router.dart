@@ -23,6 +23,7 @@ import 'package:basketly/features/orders/data/orders_repository.dart';
 import 'package:basketly/features/orders/presentation/cubit/tracking_cubit.dart';
 import 'package:basketly/features/orders/presentation/orders_screen.dart';
 import 'package:basketly/features/orders/presentation/tracking_screen.dart';
+import 'package:basketly/features/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -36,7 +37,7 @@ const _needsSignIn = {'/checkout', '/orders', '/account'};
 GoRouter buildRouter(SupabaseClient client) {
   return GoRouter(
     navigatorKey: _rootKey,
-    initialLocation: '/home',
+    initialLocation: '/splash',
     // Re-runs `redirect` whenever someone signs in or out.
     refreshListenable: AuthListenable(client),
     redirect: (context, state) {
@@ -53,6 +54,7 @@ GoRouter buildRouter(SupabaseClient client) {
       return null;
     },
     routes: [
+      GoRoute(path: '/splash', builder: (context, state) => const SplashScreen()),
       StatefulShellRoute.indexedStack(
         builder: (context, state, shell) => AppShell(shell: shell),
         branches: [
